@@ -31,6 +31,12 @@ function win(userChoice, computerChoice) {
     const smallUserWord = "user".fontsize(2).sub();
     const smallCompWord = "comp".fontsize(2).sub();
     result_div.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win!`;
+
+    document.body.classList.remove("screen-loose");
+    document.querySelector("header").classList.remove("header-loose");
+
+    document.body.classList.add("screen-win");
+    document.querySelector("header").classList.add("header-win");
 }
 function loose(userChoice, computerChoice) {
     console.log("User loose");
@@ -41,12 +47,24 @@ function loose(userChoice, computerChoice) {
     const smallUserWord = "user".fontsize(2).sub();
     const smallCompWord = "comp".fontsize(2).sub();
     result_div.innerHTML = `${convertToWord(computerChoice)}${smallCompWord} beats ${convertToWord(userChoice)}${smallUserWord}. You loose!`;
+    
+    document.body.classList.remove("screen-win");
+    document.querySelector("header").classList.remove("header-win");
+    
+    document.body.classList.add("screen-loose");
+    document.querySelector("header").classList.add("header-loose");
 }
 function draw(userChoice, computerChoice) {
     console.log("It is a draw");
     const smallUserWord = "user".fontsize(2).sub();
     const smallCompWord = "comp".fontsize(2).sub();
     result_div.innerHTML = `${convertToWord(computerChoice)}${smallUserWord} equals ${convertToWord(userChoice)}${smallCompWord}. It is a draw!`;
+
+    document.body.classList.remove("screen-win");
+    document.querySelector("header").classList.remove("header-win");
+
+    document.body.classList.remove("screen-loose");
+    document.querySelector("header").classList.remove("header-loose");
 }
 
 function game(userChoice) {

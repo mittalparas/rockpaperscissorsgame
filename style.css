@@ -6,17 +6,19 @@
 }
 
 body {
-    background-color: rgba(245, 255, 188, 0.966);
+    background-color: lightgray;
     color: black;
+    transition: background-color 0.3s;
 }
 
 header {
     background-color: white;
     padding: 20px;
+    transition: background-color 0.3s;
+    transition: color 0.4s;
 }
 
 header > h1 {
-    color:black;
     text-align:center;
 }
 
@@ -92,3 +94,26 @@ header > span {
 #action-message {
     text-align: center;
 }
+
+.screen-win {
+    background-color: #97e797;
+}
+
+.screen-loose {
+    background-color: rgb(255, 111, 111);
+}
+
+.screen-draw {
+    background-color: lightgray;
+}
+
+.header-win {
+    background-color: black;
+    color: lightgreen;
+}
+
+.header-loose {
+    background-color: black;
+    color: red;
+}
+
